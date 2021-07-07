@@ -6,17 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link re="stylesheet" href="script.js">
     <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <div>
-        <header>
-            <h1>Weather Dashboard</h1>
-        </header>
+    <div class="card">
+        <div class="search">
+            <input type="text" class="search-bar">
+            <button>Search</button>
+        </div>
     </div>
+    <div class="weather">
+        <h2 class="city">Weather in Toronto</h2>
+        <div class="temp">20°C</div>
+        <img src="" alt="" class="icon" />
+        <div class="condition">Cloudy</div>
+        <div class="humid">Humidity: 43%</div>
+        <div class="wind">Wind speed: 6.2 km/h</div>
+        <div class="uvIndex">High</div>
+
+    </div>
+
     <script src="/script.js"></script>
 </body>
 
