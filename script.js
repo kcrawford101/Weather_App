@@ -9,13 +9,17 @@ let weather = {
             + this.apiKey
         )
             .then ((response) => response.json())
-            .then ((data) => console.log(data))
+            .then ((data) => this.displayWeather(data))
     },
-    
+// Display weather
     displayWeather: function(data) {
         const { name } = data;
-        const { icon, condition } = data.weather;
-        const { temp, humid } =
+        const { icon, description } = data.weather[0];
+        const { temp, humidity } = data.main;
+        const { speed } = data.wind;
+        // add UV index
+        console.log(name,icon, description, temp, humidity, speed)
+        document.querySelector(".city").innerText = "Weather in " + name;
 
     }
 };
