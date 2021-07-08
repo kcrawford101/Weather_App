@@ -18,7 +18,7 @@ let weather = {
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
         // add UV index
-        console.log(name,icon, description, temp, humidity, speed)
+        
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".condition").innerText = description;
@@ -26,5 +26,17 @@ let weather = {
         document.querySelector(".humid").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
 
+    },
+    search: function() {
+        this.fetchWeather(document.querySelector(".search-bar").value);       
     }
 };
+document.querySelector(".search button").addEventListener("click", function() {
+    weather.search();
+});
+document.querySelector(".search-bar").addEventListener("keyup", function(event) {
+    if (event.key == "Enter") {
+        weather.search();
+    }
+});
+weather.fetchWeather("Toronto")
