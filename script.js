@@ -5,7 +5,7 @@ let weather = {
         fetch(
             "https://api.openweathermap.org/data/2.5/weather?q=" 
             + city 
-            + "&appid=" 
+            + "&units=metric&appid=" 
             + this.apiKey
         )
             .then ((response) => response.json())
@@ -20,6 +20,11 @@ let weather = {
         // add UV index
         console.log(name,icon, description, temp, humidity, speed)
         document.querySelector(".city").innerText = "Weather in " + name;
+        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".condition").innerText = description;
+        document.querySelector(".temp").innerText = temp + "°C";
+        document.querySelector(".humid").innerText = "Humidity: " + humidity + "%";
+        document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
 
     }
 };
